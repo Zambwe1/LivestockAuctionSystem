@@ -1,0 +1,16 @@
+nbproject/
+build/
+dist/
+*.class
+*.jar
+*.war
+*.ear
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+lib/
+node_modules/
+*.log
