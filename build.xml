@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="LivestockAuctionSystem" default="help" basedir=".">
+    <description>
+        Build script for Livestock Auction Management System
+    </description>
+    
+    <!-- Set global properties -->
+    <property name="src.dir" value="src/java"/>
+    <property name="web.dir" value="web"/>
+    <property name="build.dir" value="build"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="lib.dir" value="web/WEB-INF/lib"/>
+    
+    <!-- Initialize directories -->
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${dist.dir}"/>
+        <mkdir dir="${lib.dir}"/>
+    </target>
+    
+    <!-- Compile Java source files -->
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.dir}" debug="on" deprecation="on">
+            <classpath>
+                <fileset dir="${lib.dir}">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+        </javac>
+    </target>
+    
+    <!-- Create WAR file -->
+    <target name="war" depends="compile">
+        <war destfile="${dist.dir}/LivestockAuctionSystem.war" webxml="${web.dir}/WEB-INF/web.xml">
+            <fileset dir="${web.dir}"/>
+            <classes dir="${build.dir}"/>
+            <lib dir="${lib.dir}"/>
+        </war>
+    </target>
+    
+    <!-- Clean build artifacts -->
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+    
+    <!-- Help target -->
+    <target name="help">
+        <echo message="Available targets:"/>
+        <echo message="  init    - Initialize directories"/>
+        <echo message="  compile - Compile Java source files"/>
+        <echo message="  war     - Create WAR file"/>
+        <echo message="  clean   - Clean build artifacts"/>
+    </target>
+</project>
