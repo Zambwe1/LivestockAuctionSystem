@@ -1,0 +1,71 @@
+/* Authentication Pages Stylesheet */
+
+.login-container,
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-box,
+.register-box {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box h1,
+.register-box h1 {
+    text-align: center;
+    color: #667eea;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.login-box h2,
+.register-box h2 {
+    text-align: center;
+    color: #333;
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+}
+
+.login-box form,
+.register-box form {
+    margin-bottom: 20px;
+}
+
+.register-link,
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.register-link a,
+.login-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover,
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-box,
+    .register-box {
+        padding: 20px;
+        margin: 20px;
+    }
+}
